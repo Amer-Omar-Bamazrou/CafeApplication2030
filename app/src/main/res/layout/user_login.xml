@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FIX: Added padding to the root layout and centered content -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    tools:context=".userLogin">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="64dp"
+        android:text="Login System"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <!-- FIX: Removed nested LinearLayout, used direct views for User Name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="User Name:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- FIX: Removed nested LinearLayout, used direct views for Password -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- FIX: Use a Space with layout_weight to push content to the bottom -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- FIX: Properly sized message area -->
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        tools:text="Error message appears here" />
+
+    <!-- Buttons are already in a vertical LinearLayout, which is correct -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonLoginIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="loginButton"
+            android:text="Login"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="registerButton"
+            android:text="New User"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>
