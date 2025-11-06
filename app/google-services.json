@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "180342523243",
-    "project_id": "cafeshopapplication",
-    "storage_bucket": "cafeshopapplication.firebasestorage.app"
+    "project_number": "314215341515",
+    "project_id": "cafeshopapplication2030",
+    "storage_bucket": "cafeshopapplication2030.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:180342523243:android:36f6bc3cccc121feee382e",
+        "mobilesdk_app_id": "1:314215341515:android:f5ae879b348a9cdac26a4e",
         "android_client_info": {
-          "package_name": "com.example.CafeShopApplication"
+          "package_name": "com.example.cafeshopapplication"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAyc11pIGMe_0qMOiv2waH0lGwgOsNSKi4"
+          "current_key": "AIzaSyDpmtY7SmTvSB2ZfJLddE6y5LaP_T5uMJI"
         }
       ],
       "services": {
@@ -26,15 +26,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:180342523243:android:e8b97bb2229a49d7ee382e",
+        "mobilesdk_app_id": "1:314215341515:android:5cd3d196d17a0d1fc26a4e",
         "android_client_info": {
-          "package_name": "com.example.cafeshopapplication"
+          "package_name": "com.example.cafeshopapplication2030"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAyc11pIGMe_0qMOiv2waH0lGwgOsNSKi4"
+          "current_key": "AIzaSyDpmtY7SmTvSB2ZfJLddE6y5LaP_T5uMJI"
         }
       ],
       "services": {

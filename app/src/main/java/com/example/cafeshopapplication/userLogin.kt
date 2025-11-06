@@ -61,7 +61,7 @@ class userLogin : AppCompatActivity() {
 
                     // FIX 3: Redirect to the main application screen (e.g., MainActivity).
                     // IMPORTANT: You must have a MainActivity or change this to your app's actual main screen.
-                    val intent = Intent(this, userSignUp::class.java)
+                    val intent = Intent(this, menuPage::class.java)
                     startActivity(intent)
                     finish() // Close the login screen so the user can't go back to it
                 } else {
