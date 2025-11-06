@@ -5,9 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DCC3C3"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp"
-    android:gravity="center_horizontal"
     tools:context=".userLogin">
 
     <TextView
@@ -99,6 +100,7 @@
             android:id="@+id/buttonLoginIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0A080B"
             android:onClick="loginButton"
             android:text="Login"
             android:textSize="20sp" />
@@ -108,6 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:backgroundTint="#0F0E0E"
             android:onClick="registerButton"
             android:text="New User"
             android:textSize="20sp" />

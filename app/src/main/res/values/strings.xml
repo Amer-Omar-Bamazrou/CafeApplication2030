@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">CafeShopApplication</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="first_name_label">First Name :</string>
+    <string name="enter_first_name_hint">Enter first name</string>
+    <string name="last_name_label">Last Name :</string>
+    <string name="enter_last_name_hint">Enter last name</string>
+    <string name="age_label">Age :</string>
+    <string name="enter_age_hint">Enter age</string>
+    <string name="address_label">Address :</string>
+    <string name="enter_address_hint">Enter address</string>
+    <string name="male_radio_button">Male</string>
+    <string name="female_radio_button">Female</string>
+    <string name="email_label">Email :</string>
+    <string name="enter_email_hint">Enter email</string>
+    <string name="password_label">Password :</string>
+    <string name="enter_password_hint">Enter password</string>
+    <string name="register_button">Register</string>
+
+    <!-- Cafe Menu -->
+    <string name="cafe_menu_title">Café Menu</string>
+    <string name="product_image_desc">Product Image</string>
+
+    <string name="cappuccino_name">Cappuccino</string>
+    <string name="cappuccino_description">Hot Beverage</string>
+    <string name="cappuccino_price">$4.50</string>
+
+    <string name="latte_name">Latte</string>
+    <string name="latte_description">Hot Beverage</string>
+    <string name="latte_price">$5.00</string>
+
+    <string name="spanish_latte_name">Spanish Latte</string>
+    <string name="spanish_latte_description">Sweet &amp; Creamy</string>
+    <string name="spanish_latte_price">$5.50</string>
+
+    <string name="espresso_name">Espresso</string>
+    <string name="espresso_description">Strong &amp; Bold</string>
+    <string name="espresso_price">$3.00</string>
 </resources>

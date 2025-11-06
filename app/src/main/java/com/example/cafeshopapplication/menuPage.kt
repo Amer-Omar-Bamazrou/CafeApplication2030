@@ -7,6 +7,6 @@ class menuPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_page) // <-- make sure the XML name matches
+        setContentView(R.layout.menu_page)
     }
 }
