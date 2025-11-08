@@ -9,7 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".userLogin">
+    tools:context=".UserLogin">
 
     <TextView
         android:id="@+id/textView"
@@ -101,7 +101,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#0A080B"
-            android:onClick="loginButton"
             android:text="Login"
             android:textSize="20sp" />
 
@@ -111,7 +110,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#0F0E0E"
-            android:onClick="registerButton"
             android:text="New User"
             android:textSize="20sp" />
     </LinearLayout>

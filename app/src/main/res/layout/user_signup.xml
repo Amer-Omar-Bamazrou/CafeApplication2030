@@ -23,7 +23,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
 
-        <!-- First Name -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,74 +33,21 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/first_name_label"
+                android:text="Full Name:"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextFirstName"
+                android:id="@+id/editTextFullName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/enter_first_name_hint"
+                android:hint="Enter full name"
                 android:inputType="textPersonName"
                 android:autofillHints="name"
                 android:textSize="18sp"
                 android:minHeight="48dp"/>
         </LinearLayout>
 
-        <!-- Last Name -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/last_name_label"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextLastName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/enter_last_name_hint"
-                android:inputType="textPersonName"
-                android:autofillHints="name"
-                android:textSize="18sp"
-                android:minHeight="48dp"/>
-        </LinearLayout>
-
-        <!-- Age -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/age_label"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextNumberAge"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/enter_age_hint"
-                android:inputType="number"
-                android:autofillHints=""
-                android:textSize="18sp"
-                android:minHeight="48dp"/>
-        </LinearLayout>
-
-        <!-- Address -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,30 +73,31 @@
                 android:minHeight="48dp"/>
         </LinearLayout>
 
-        <!-- Gender -->
-        <RadioGroup
-            android:id="@+id/radioGroupMF"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="8dp"
+            android:gravity="center_vertical"
             android:layout_marginBottom="8dp">
 
-            <RadioButton
-                android:id="@+id/radioButtonMale"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/male_radio_button" />
+                android:text="Phone No:"
+                android:textSize="18sp" />
 
-            <RadioButton
-                android:id="@+id/radioButtonFemale"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/female_radio_button"
-                android:layout_marginStart="32dp" />
-        </RadioGroup>
+                android:layout_weight="1"
+                android:hint="Enter phone number"
+                android:inputType="phone"
+                android:autofillHints="phone"
+                android:textSize="18sp"
+                android:minHeight="48dp"/>
+        </LinearLayout>
 
-        <!-- Email -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -176,7 +123,6 @@
                 android:minHeight="48dp"/>
         </LinearLayout>
 
-        <!-- Password -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -202,7 +148,6 @@
                 android:minHeight="48dp"/>
         </LinearLayout>
 
-        <!-- Message Text -->
         <TextView
             android:id="@+id/textViewMessage"
             android:layout_width="match_parent"
@@ -212,15 +157,12 @@
             android:padding="8dp"
             android:minHeight="48dp" />
 
-        <!-- Save Button -->
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="saveNewUserButton"
             android:text="@string/register_button"
             android:textSize="20sp"
             android:layout_marginTop="12dp" />
-
     </LinearLayout>
 </ScrollView>

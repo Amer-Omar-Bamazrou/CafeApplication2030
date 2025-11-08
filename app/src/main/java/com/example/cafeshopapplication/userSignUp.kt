@@ -1,88 +1,67 @@
 package com.example.cafeshopapplication
 
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels // Import the new delegate
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import com.example.cafeshopapplication.databinding.UserSignupBinding // Import the auto-generated View Binding class
+import com.example.cafeshopapplication.ui.auth.AuthResult
+import com.example.cafeshopapplication.ui.auth.AuthViewModel
 
 class userSignUp : AppCompatActivity() {
 
-    //Declaring private variables for (Auth/Firestore)
-    private lateinit var auth: FirebaseAuth
-    private lateinit var firestore: FirebaseFirestore
+    // 1. Set up View Binding
+    private lateinit var binding: UserSignupBinding
+
+    // 2. Get a reference to our AuthViewModel
+    private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.user_signup)
 
-        // Initialize Firebase services
-        auth = FirebaseAuth.getInstance()
-        firestore = FirebaseFirestore.getInstance()
+        // 3. Inflate the layout using View Binding
+        binding = UserSignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        // We removed all the old Firebase and findViewById code
 
-        // Handling the bar padding
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        // 4. Set the click listener for the save button
+        binding.buttonSave.setOnClickListener {
+            // 5. Get text from our NEW layout fields
+            val fullName = binding.editTextFullName.text.toString().trim()
+            val phone = binding.editTextPhone.text.toString().trim()
+            val address = binding.editTextAddress.text.toString().trim()
+            val email = binding.editTextNewUserEmail.text.toString().trim()
+            val password = binding.editTextNewUserPassword.text.toString().trim()
+
+            // 6. Tell the ViewModel to do the work!
+            authViewModel.register(email, password, fullName, address, phone)
         }
+
+        // 7. Start listening for the result from the ViewModel
+        observeRegistrationResult()
     }
 
-    fun saveNewUserButton(view: View) {
-        // Getting user inputs from XML fields
-        val firstName = findViewById<EditText>(R.id.editTextFirstName).text.toString().trim()
-        val lastName = findViewById<EditText>(R.id.editTextLastName).text.toString().trim()
-        val age = findViewById<EditText>(R.id.editTextNumberAge).text.toString().trim()
-        val address = findViewById<EditText>(R.id.editTextAddress).text.toString().trim()
-        val email = findViewById<EditText>(R.id.editTextNewUserEmail).text.toString().trim()
-        val password = findViewById<EditText>(R.id.editTextNewUserPassword).text.toString().trim()
-        val message = findViewById<TextView>(R.id.textViewMessage)
-
-        // If condition to check for empty fields
-        if (firstName.isEmpty() || lastName.isEmpty() || age.isEmpty() ||
-            address.isEmpty() || email.isEmpty() || password.isEmpty()
-        ) {
-            message.text = "Please fill in all fields!"
-            return
-        }
-
-        // Creating the user info in Firebase Authentication
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val userId = auth.currentUser?.uid
-
-                    // Create the required user data in firestore in order to store it
-                    val userData = hashMapOf(
-                        "FirstName" to firstName,
-                        "LastName" to lastName,
-                        "Age" to age,
-                        "Address" to address,
-                        "Email" to email
-                    )
-
-                    if (userId != null) {
-                        firestore.collection("users").document(userId)
-                            .set(userData)
-                            .addOnSuccessListener {
-                                Toast.makeText(this, "Successfully created Account", Toast.LENGTH_SHORT).show()
-                                message.text = ""
-                                finish() // Method for returning to login page
-                            }
-                            .addOnFailureListener { e ->
-                                message.text = "Error while saving user data: ${e.message}"
-                            }
-                    }
-                } else {
-                    message.text = "Error: ${task.exception?.message}"
+    /**
+     * This function "observes" the LiveData in our ViewModel.
+     * When the ViewModel sends a result, this code runs.
+     */
+    private fun observeRegistrationResult() {
+        authViewModel.authResult.observe(this) { result ->
+            // 8. The ViewModel sent a result. Check what it is.
+            when (result) {
+                is AuthResult.Success -> {
+                    // It was a success!
+                    Toast.makeText(this, "Successfully created Account", Toast.LENGTH_SHORT).show()
+                    binding.textViewMessage.text = "" // Clear any old errors
+                    finish() // Close the register page and go back to login
+                }
+                is AuthResult.Error -> {
+                    // It failed. Show the error message from the ViewModel.
+                    binding.textViewMessage.text = result.message
                 }
             }
+        }
     }
+
+    // REMOVED: The old saveNewUserButton(view: View) function is gone.
 }
