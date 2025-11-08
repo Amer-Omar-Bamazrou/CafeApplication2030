@@ -36,4 +36,8 @@
     <string name="espresso_name">Espresso</string>
     <string name="espresso_description">Strong &amp; Bold</string>
     <string name="espresso_price">$3.00</string>
+    <string name="add_to_cart">Add to Cart</string>
+
+
+
 </resources>
