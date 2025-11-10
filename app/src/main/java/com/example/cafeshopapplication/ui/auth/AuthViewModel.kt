@@ -8,20 +8,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
-// 1. We make our class extend ViewModel()
 class AuthViewModel : ViewModel() {
-
-    // 2. Get instances of Firebase Auth and Firestore
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    // 3. This LiveData will send results back to the Activity
     private val _authResult = MutableLiveData<AuthResult>()
     val authResult: LiveData<AuthResult> = _authResult
 
-    /**
-     * This is the LOGIN logic, moved from your userLogin activity.
-     */
     fun login(email: String, password: String) {
         if (email.isEmpty() || password.isEmpty()) {
             _authResult.value = AuthResult.Error("Please fill all fields")
@@ -37,14 +30,9 @@ class AuthViewModel : ViewModel() {
                 }
             }
     }
-
-    /**
-     * This is the REGISTER logic, moved from your userSignUp activity.
-     */
-    // 4. Notice the parameters now match our new Customer model
     fun register(email: String, password: String, fullName: String, address: String, phone: String) {
         if (email.isEmpty() || password.isEmpty() || fullName.isEmpty() || address.isEmpty() || phone.isEmpty()) {
-            _authResult.value = AuthResult.Error("Please fill all fields")
+            _authResult.value = AuthResult.Error("Fill fields")
             return
         }
 
@@ -54,7 +42,6 @@ class AuthViewModel : ViewModel() {
                     val userId = auth.currentUser?.uid
                     if (userId != null) {
 
-                        // 5. HERE! We are now using your Customer class.
                         val customer = Customer(
                             uid = userId,
                             fullName = fullName,
@@ -63,7 +50,6 @@ class AuthViewModel : ViewModel() {
                             phoneNo = phone
                         )
 
-                        // 6. We save the customer object to your 'users' collection
                         firestore.collection("users").document(userId)
                             .set(customer)
                             .addOnSuccessListener {
@@ -80,9 +66,6 @@ class AuthViewModel : ViewModel() {
     }
 }
 
-/**
- * This sealed class represents the results: Success or Error.
- */
 sealed class AuthResult {
     data class Success(val user: FirebaseUser) : AuthResult()
     data class Error(val message: String) : AuthResult()
