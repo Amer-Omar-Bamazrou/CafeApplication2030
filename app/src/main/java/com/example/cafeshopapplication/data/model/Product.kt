@@ -2,7 +2,7 @@ package com.example.cafeshopapplication.data.model
 
 import com.google.firebase.firestore.DocumentId
 
-class Product (
+data class Product (
     @DocumentId
     val idProd: String = "",
     val nameProd: String = "",

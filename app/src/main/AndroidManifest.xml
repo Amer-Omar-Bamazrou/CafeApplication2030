@@ -21,13 +21,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Other activities in your application -->
         <activity
             android:name=".userSignUp"
             android:exported="false" />
 
         <activity
-            android:name=".menuPage"
+            android:name=".ui.menu.MenuPage"
             android:exported="false" />
     </application>
 

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- FIX: Added padding to the root layout and centered content -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -21,7 +20,6 @@
         android:textSize="34sp"
         android:textStyle="bold" />
 
-    <!-- FIX: Removed nested LinearLayout, used direct views for User Name -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +45,6 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <!-- FIX: Removed nested LinearLayout, used direct views for Password -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,13 +69,11 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <!-- FIX: Use a Space with layout_weight to push content to the bottom -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- FIX: Properly sized message area -->
     <TextView
         android:id="@+id/textViewMessage"
         android:layout_width="match_parent"
@@ -90,7 +85,6 @@
         android:textSize="16sp"
         tools:text="Error message appears here" />
 
-    <!-- Buttons are already in a vertical LinearLayout, which is correct -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
