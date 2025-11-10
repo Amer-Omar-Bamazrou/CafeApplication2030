@@ -28,6 +28,29 @@
         <activity
             android:name=".ui.menu.MenuPage"
             android:exported="false" />
+
+
+
+        <activity
+            android:name=".ui.cart.CartActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ItemDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.order.OrderHistoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.order.OrderStatusActivity"
+            android:exported="false" />
+
     </application>
+
+
+
+
 
 </manifest>

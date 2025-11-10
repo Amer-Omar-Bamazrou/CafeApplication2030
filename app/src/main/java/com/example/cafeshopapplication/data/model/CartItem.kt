@@ -1,7 +1,5 @@
-package com.example.cafeshopapplication.data.model
-
-
+package com.example.cafeshopapplication.data.model// Add a primary constructor that requires a Product
 data class CartItem(
-    val product: Product,
-    var quantity: Int = 1
+    val product: Product? = null,
+    var quantity: Int = 0
 )
