@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.admin.AdminAddProductActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Product"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name (e.g., Espresso)"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="12dp"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edit_text_product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price (e.g., 2.50)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edit_text_product_image_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Image URL (Optional)"
+            android:inputType="textUri"
+            android:layout_marginBottom="12dp"
+            android:minHeight="48dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_is_available"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is this product available?"
+            android:textSize="16sp"
+            android:checked="true"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/button_save_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Product"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+</ScrollView>

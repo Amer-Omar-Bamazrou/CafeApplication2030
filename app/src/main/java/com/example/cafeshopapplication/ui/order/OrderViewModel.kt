@@ -17,38 +17,33 @@ class OrderViewModel : ViewModel() {
     private val auth = FirebaseAuth.getInstance()
     private val cartViewModel = CartViewModel()
 
-    // --- CHANGE 1: This will hold the new Order ID (String) or null ---
     private val _orderStatus = MutableLiveData<String?>()
     val orderStatus: LiveData<String?> = _orderStatus
 
-    fun placeOrder() {
+    fun placeOrder(paymentMethod: String) {
         viewModelScope.launch {
             val currentUser = auth.currentUser
             val cartItems = cartViewModel.cartItems.value.orEmpty()
             val totalPrice = cartViewModel.totalPrice.value ?: 0.0
 
             if (currentUser == null || cartItems.isEmpty()) {
-                _orderStatus.postValue(null) // Post failure
+                _orderStatus.postValue(null)
                 return@launch
             }
 
             val order = Order(
                 cusId = currentUser.uid,
                 totalPrice = totalPrice,
-                items = cartItems
+                items = cartItems,
+                paymentMethod = paymentMethod
             )
 
             try {
-                // --- CHANGE 2: Get the new order's document ---
                 val newOrderDocument = db.collection("orders").add(order).await()
-
                 cartViewModel.clearCart()
-
-                // --- CHANGE 3: Post the NEW Order ID as the success value ---
                 _orderStatus.postValue(newOrderDocument.id)
-
             } catch (e: Exception) {
-                _orderStatus.postValue(null) // Post failure
+                _orderStatus.postValue(null)
             }
         }
     }

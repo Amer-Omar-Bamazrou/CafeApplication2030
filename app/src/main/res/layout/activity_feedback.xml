@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F3ED"
+    tools:context=".ui.feedback.FeedbackActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We Value Your Feedback"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#4E342E"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please help us improve our service."
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/et_customer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/et_visit_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date of Visit (DD/MM/YYYY)"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How would you rate the app experience?"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+        <RatingBar
+            android:id="@+id/rating_app_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How would you rate our product quality?"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+        <RatingBar
+            android:id="@+id/rating_product_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Quality"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+        <RatingBar
+            android:id="@+id/rating_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Was pricing reasonable?"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+            <RadioButton android:id="@+id/rb_price_yes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yes" android:layout_marginEnd="16dp"/>
+            <RadioButton android:id="@+id/rb_price_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Would you recommend us?"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+            <RadioButton android:id="@+id/rb_rec_yes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yes" android:layout_marginEnd="16dp"/>
+            <RadioButton android:id="@+id/rb_rec_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/et_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Suggestions for improvement"
+            android:padding="12dp"
+            android:minHeight="100dp"
+            android:gravity="top"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/button_submit_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Feedback"
+            android:textSize="18sp"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+</ScrollView>

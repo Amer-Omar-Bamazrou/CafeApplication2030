@@ -10,29 +10,24 @@ class OrderStatusViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
 
-    // This will hold the single, updating order
     private val _order = MutableLiveData<Order?>()
     val order: LiveData<Order?> = _order
 
-    /**
-     * This function creates a REAL-TIME listener for one specific order.
-     */
+    //realtime listener
     fun listenToOrderStatus(orderId: String) {
         if (orderId.isEmpty()) {
             _order.postValue(null)
             return
         }
 
-        // Listen to a specific document: "orders" -> [orderId]
         db.collection("orders").document(orderId)
             .addSnapshotListener { snapshot, error ->
                 if (error != null) {
-                    _order.postValue(null) // Post null on error
+                    _order.postValue(null)
                     return@addSnapshotListener
                 }
 
                 if (snapshot != null && snapshot.exists()) {
-                    // Convert the document to an Order object
                     val order = snapshot.toObject(Order::class.java)
                     _order.postValue(order)
                 } else {

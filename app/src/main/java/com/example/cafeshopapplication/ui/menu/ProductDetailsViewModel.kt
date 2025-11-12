@@ -32,7 +32,6 @@ class ProductDetailsViewModel : ViewModel() {
                 _product.postValue(product)
 
             } catch (e: Exception) {
-                // If it fails (e.g., bad ID), post null
                 _product.postValue(null)
             }
         }

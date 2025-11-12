@@ -1,12 +1,10 @@
-package com.example.cafeshopapplication
+package com.example.cafeshopapplication.ui.auth
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cafeshopapplication.databinding.UserSignupBinding
-import com.example.cafeshopapplication.ui.auth.AuthResult
-import com.example.cafeshopapplication.ui.auth.AuthViewModel
 
 class userSignUp : AppCompatActivity() {
     private lateinit var binding: UserSignupBinding
@@ -29,20 +27,16 @@ class userSignUp : AppCompatActivity() {
             authViewModel.register(email, password, fullName, address, phone)
         }
 
-        // 7. Start listening
         observeRegistrationResult()
     }
 
-    /**
-     * This function "observes" the LiveData in our ViewModel.
-     * When the ViewModel sends a result, this code runs.
-     */
+
     private fun observeRegistrationResult() {
         authViewModel.authResult.observe(this) { result ->
             when (result) {
                 is AuthResult.Success -> {
                     Toast.makeText(this, "Successfully created Account", Toast.LENGTH_SHORT).show()
-                    binding.textViewMessage.text = "" // Clear any old errors
+                    binding.textViewMessage.text = ""
                     finish()
                 }
                 is AuthResult.Error -> {

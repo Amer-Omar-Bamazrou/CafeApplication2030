@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AuthViewModel : ViewModel() {
+
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
@@ -24,12 +25,34 @@ class AuthViewModel : ViewModel() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    _authResult.value = AuthResult.Success(task.result.user!!)
+                    val userId = task.result.user?.uid ?: ""
+                    checkUserRole(userId)
                 } else {
                     _authResult.value = AuthResult.Error(task.exception?.message ?: "Login failed")
                 }
             }
     }
+
+    private fun checkUserRole(userId: String) {
+        firestore.collection("users").document(userId).get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val isAdmin = document.getBoolean("isAdmin") == true
+
+                    if (isAdmin) {
+                        _authResult.value = AuthResult.Success(isAdmin = true)
+                    } else {
+                        _authResult.value = AuthResult.Success(isAdmin = false)
+                    }
+                } else {
+                    _authResult.value = AuthResult.Success(isAdmin = false)
+                }
+            }
+            .addOnFailureListener {
+                _authResult.value = AuthResult.Success(isAdmin = false)
+            }
+    }
+
     fun register(email: String, password: String, fullName: String, address: String, phone: String) {
         if (email.isEmpty() || password.isEmpty() || fullName.isEmpty() || address.isEmpty() || phone.isEmpty()) {
             _authResult.value = AuthResult.Error("Fill fields")
@@ -53,7 +76,7 @@ class AuthViewModel : ViewModel() {
                         firestore.collection("users").document(userId)
                             .set(customer)
                             .addOnSuccessListener {
-                                _authResult.value = AuthResult.Success(task.result.user!!)
+                                _authResult.value = AuthResult.Success(isAdmin = false)
                             }
                             .addOnFailureListener { e ->
                                 _authResult.value = AuthResult.Error("Failed to save user data: ${e.message}")
@@ -67,6 +90,6 @@ class AuthViewModel : ViewModel() {
 }
 
 sealed class AuthResult {
-    data class Success(val user: FirebaseUser) : AuthResult()
+    data class Success(val isAdmin: Boolean) : AuthResult()
     data class Error(val message: String) : AuthResult()
 }

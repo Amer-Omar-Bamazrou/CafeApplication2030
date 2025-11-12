@@ -4,11 +4,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.cafeshopapplication.data.model.Product
 import com.example.cafeshopapplication.databinding.ItemProductBinding
-// We need to import the CartViewModel AND the DetailsActivity
+
 import com.example.cafeshopapplication.ui.cart.CartViewModel
-import com.example.cafeshopapplication.ItemDetailsActivity // <-- Assumes this is your file name
+import com.example.cafeshopapplication.ui.menu.ItemDetailsActivity
 
 class ProductAdapter(
     private var productList: List<Product> = emptyList(),
@@ -37,22 +38,21 @@ class ProductAdapter(
         holder.binding.textViewProductName.text = product.nameProd
         holder.binding.textViewProductPrice.text = String.format("$%.2f", product.priceProd)
 
-        // --- CLICK LISTENER 1: The '+' Button ---
+        Glide.with(holder.itemView.context)
+            .load(product.imageProd)
+            .placeholder(android.R.drawable.ic_menu_gallery) // Shows while loading
+            .error(android.R.drawable.ic_menu_report_image) // Shows if link is bad
+            .into(holder.binding.imageViewProduct)
+
         holder.binding.buttonAddToCart.setOnClickListener {
-            // This is the "Quick Add"
             cartViewModel.addToCart(product)
         }
 
-        // --- CLICK LISTENER 2: The Whole Card ---
+        // View Details
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
-
-            // Go to the Details Page
             val intent = Intent(context, ItemDetailsActivity::class.java)
-
-            // Pass the ID of the product that was clicked
             intent.putExtra("PRODUCT_ID", product.idProd)
-
             context.startActivity(intent)
         }
     }
