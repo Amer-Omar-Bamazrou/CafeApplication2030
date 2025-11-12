@@ -28,8 +28,6 @@ class OrderDetailAdapter(
     override fun onBindViewHolder(holder: DetailViewHolder, position: Int) {
         val cartItem = itemList[position]
 
-        // Use safe calls because the product field is nullable
-        // Calculate the total price for this line item
         val subtotal = cartItem.product?.priceProd?.times(cartItem.quantity) ?: 0.0
 
         holder.binding.textViewDetailQuantity.text = "x${cartItem.quantity}"

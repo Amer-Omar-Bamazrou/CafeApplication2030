@@ -1,30 +1,22 @@
-package com.example.cafeshopapplication.ui.order
+package com.example.cafeshopapplication.ui.admin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cafeshopapplication.data.model.Order
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-
-
-class OrderHistoryViewModel : ViewModel() {
+class AdminViewOrdersViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
 
     private val _orders = MutableLiveData<List<Order>>()
     val orders: LiveData<List<Order>> = _orders
 
-    //realtime
-    fun listenForOrderHistory(userId: String) {
-
-        // Build the new, simpler query
+    fun listenForAllOrders() {
         db.collection("orders")
-            .whereEqualTo("cusId", userId)
-
-
+            .orderBy("orderDate", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshot, error ->
                 if (error != null) {
                     _orders.postValue(emptyList())

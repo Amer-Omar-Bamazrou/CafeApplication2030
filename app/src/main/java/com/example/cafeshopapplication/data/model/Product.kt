@@ -8,5 +8,7 @@ data class Product (
     val nameProd: String = "",
     val priceProd: Double = 0.0,
     val imageProd: String = "",
-    val availableProd: Boolean = true
+    val availableProd: Boolean = true,
+    val description: String = "",
+    val rating: Double = 0.0,
     )

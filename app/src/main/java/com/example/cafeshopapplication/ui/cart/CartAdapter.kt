@@ -30,13 +30,11 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val cartItem = cartList[position]
 
-        // --- 3. SET THE DATA (WITH SAFE CALLS) ---
         // This adds '?' and '?:' to handle a null product
         holder.binding.textViewItemName.text = cartItem.product?.nameProd ?: "Unknown Item"
         holder.binding.textViewItemPrice.text = String.format("$%.2f", cartItem.product?.priceProd ?: 0.0)
         holder.binding.textViewQuantity.text = cartItem.quantity.toString()
 
-        // --- 4. SET UP THE CLICK LISTENERS ---
 
         holder.binding.buttonRemoveItem.setOnClickListener {
             cartViewModel.removeItemFromCart(cartItem)

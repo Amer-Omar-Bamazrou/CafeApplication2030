@@ -22,22 +22,18 @@ class MenuViewModel : ViewModel() {
         fetchProducts()
     }
 
-    private fun fetchProducts() {
+
+    fun fetchProducts() {
         _isLoading.value = true
 
         viewModelScope.launch {
             try {
                 val snapshot = db.collection("products").get().await()
-
                 val productList = snapshot.toObjects(Product::class.java)
-
                 _products.postValue(productList)
-
             } catch (e: Exception) {
-                // If it fails
                 _products.postValue(emptyList())
             }
-
             _isLoading.postValue(false)
         }
     }

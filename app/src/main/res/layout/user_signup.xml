@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="#F8F3ED"
-    tools:context=".userSignUp">
+    tools:context=".ui.auth.userSignUp">
 
     <LinearLayout
         android:layout_width="match_parent"

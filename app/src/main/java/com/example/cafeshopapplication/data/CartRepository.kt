@@ -17,9 +17,7 @@ object CartRepository {
     fun addToCart(product: Product) {
         val currentList = _cartItems.value.orEmpty().toMutableList()
 
-        // --- ADD SAFE CALL HERE ---
         val existingItem = currentList.find { it.product?.idProd == product.idProd }
-
         if (existingItem != null) {
             existingItem.quantity++
         } else {
@@ -40,7 +38,6 @@ object CartRepository {
     fun updateItemQuantity(cartItem: CartItem, newQuantity: Int) {
         val currentList = _cartItems.value.orEmpty().toMutableList()
 
-        // --- ADD SAFE CALL HERE ---
         val itemToUpdate = currentList.find { it.product?.idProd == cartItem.product?.idProd }
 
         if (itemToUpdate != null) {
@@ -59,7 +56,6 @@ object CartRepository {
         val list = _cartItems.value.orEmpty()
         var total = 0.0
         for (item in list) {
-            // --- ADD SAFE CALL HERE ---
             // If product is not null, use its price. If it is null, use 0.0.
             val itemPrice = item.product?.priceProd ?: 0.0
             total += itemPrice * item.quantity

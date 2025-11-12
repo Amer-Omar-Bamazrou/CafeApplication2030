@@ -6,11 +6,12 @@ import com.google.firebase.firestore.DocumentId
 data class Order(
     @DocumentId
     val orderId: String = "",
-    val cusId: String = "", // The ID of the customer who placed it
-    val orderDate: Timestamp = Timestamp.now(), // Sets the date to "right now"
-    var orderStatus: String = "Pending", // e.g., "Pending", "Preparing", "Collect"
+    val cusId: String = "",
+    val orderDate: Timestamp = Timestamp.now(),
+    var orderStatus: String = "Pending",
     var totalPrice: Double = 0.0,
+    val paymentMethod: String = "Cash",
 
-    // This will hold the list of all products in the order
+
     val items: List<CartItem> = emptyList()
 )
