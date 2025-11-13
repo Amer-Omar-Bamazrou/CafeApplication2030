@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cafeshopapplication.MainActivity // <-- IMPORT MAIN ACTIVITY
 import com.example.cafeshopapplication.databinding.UserLoginBinding
-import com.example.cafeshopapplication.ui.menu.MenuPage
 import com.example.cafeshopapplication.ui.admin.AdminDashboardActivity
 
 class UserLogin : AppCompatActivity() {
@@ -16,7 +16,6 @@ class UserLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = UserLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -24,11 +23,6 @@ class UserLogin : AppCompatActivity() {
             val email = binding.editTextUserName.text.toString().trim()
             val password = binding.editTextPassword.text.toString().trim()
             authViewModel.login(email, password)
-        }
-
-        binding.buttonRegister.setOnClickListener {
-            val intent = Intent(this, userSignUp::class.java)
-            startActivity(intent)
         }
 
         observeAuthResult()
@@ -41,20 +35,15 @@ class UserLogin : AppCompatActivity() {
                     binding.textViewMessage.text = ""
                     Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
 
+                    val intent: Intent
                     if (result.isAdmin) {
-                        // USER IS AN ADMIN
-                        Toast.makeText(this, "Welcome, Admin!", Toast.LENGTH_SHORT).show()
-
-                        // This is the correct intent
-                        val intent = Intent(this, AdminDashboardActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
-
-
+                        intent = Intent(this, AdminDashboardActivity::class.java)
                     } else {
-                        val intent = Intent(this, MenuPage::class.java)
-                        startActivity(intent)
+                        intent = Intent(this, MainActivity::class.java)
                     }
+
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
                     finish()
                 }
                 is AuthResult.Error -> {

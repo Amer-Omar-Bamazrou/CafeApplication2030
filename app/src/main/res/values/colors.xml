@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="coffee_brown">#4E342E</color>
+    <color name="color_primary_dark">#0F2A1D</color>
+    <color name="color_secondary">#375534</color>
+    <color name="color_tertiary">#6B9071</color>
+    <color name="color_background_light">#AEC3B0</color>
+    <color name="color_surface_cream">#E3EED4</color>
 </resources>

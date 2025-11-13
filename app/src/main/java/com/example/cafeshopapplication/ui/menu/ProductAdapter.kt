@@ -13,7 +13,6 @@ import com.example.cafeshopapplication.ui.menu.ItemDetailsActivity
 
 class ProductAdapter(
     private var productList: List<Product> = emptyList(),
-    // We need the CartViewModel for the '+' button
     private val cartViewModel: CartViewModel
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 

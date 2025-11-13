@@ -30,7 +30,6 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val cartItem = cartList[position]
 
-        // This adds '?' and '?:' to handle a null product
         holder.binding.textViewItemName.text = cartItem.product?.nameProd ?: "Unknown Item"
         holder.binding.textViewItemPrice.text = String.format("$%.2f", cartItem.product?.priceProd ?: 0.0)
         holder.binding.textViewQuantity.text = cartItem.quantity.toString()

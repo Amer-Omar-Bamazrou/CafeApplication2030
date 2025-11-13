@@ -15,6 +15,10 @@
         android:theme="@style/Theme.CafeShopApplication">
 
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.auth.UserLogin"
             android:exported="false" />
 
@@ -23,24 +27,13 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.menu.MenuPage"
-            android:exported="false" />
-
-        <activity
-            android:name=".ui.cart.CartActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ui.menu.ItemDetailsActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ui.order.OrderHistoryActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ui.order.OrderStatusActivity"
-            android:exported="false" />
+            android:name=".ui.auth.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ui.admin.AdminDashboardActivity"
@@ -63,17 +56,16 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.feedback.FeedbackActivity"
+            android:name=".ui.menu.ItemDetailsActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.auth.WelcomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".ui.order.OrderStatusActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.feedback.FeedbackActivity"
+            android:exported="false" />
 
     </application>
 

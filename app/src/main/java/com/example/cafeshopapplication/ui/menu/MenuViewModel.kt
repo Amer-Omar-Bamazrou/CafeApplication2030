@@ -11,8 +11,11 @@ import kotlinx.coroutines.tasks.await
 
 class MenuViewModel : ViewModel() {
     private val db = FirebaseFirestore.getInstance()
-    private val _products = MutableLiveData<List<Product>>()
 
+    // Stores ALL products (Backup)
+    private var allProductsList = listOf<Product>()
+
+    private val _products = MutableLiveData<List<Product>>()
     val products: LiveData<List<Product>> = _products
 
     private val _isLoading = MutableLiveData<Boolean>()
@@ -22,7 +25,6 @@ class MenuViewModel : ViewModel() {
         fetchProducts()
     }
 
-
     fun fetchProducts() {
         _isLoading.value = true
 
@@ -30,11 +32,28 @@ class MenuViewModel : ViewModel() {
             try {
                 val snapshot = db.collection("products").get().await()
                 val productList = snapshot.toObjects(Product::class.java)
-                _products.postValue(productList)
+
+                // Save full list
+                allProductsList = productList
+
+                // Show all initially
+                _products.postValue(allProductsList)
+
             } catch (e: Exception) {
                 _products.postValue(emptyList())
             }
             _isLoading.postValue(false)
+        }
+    }
+
+    fun filterByCategory(category: String) {
+        if (category == "All") {
+            _products.value = allProductsList
+        } else {
+            val filtered = allProductsList.filter { product ->
+                product.category.equals(category, ignoreCase = true)
+            }
+            _products.value = filtered
         }
     }
 }

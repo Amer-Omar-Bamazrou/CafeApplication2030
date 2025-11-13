@@ -11,8 +11,7 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
 
 
-    private val WELCOME_IMAGE_URL = "https://i.pinimg.com/736x/af/74/e9/af74e9d2739e7fd7890db43e55ba5cde.jpg"
-
+    private val WELCOME_IMAGE_URL = "https://i.pinimg.com/736x/96/00/78/9600788421546e2db295c2cc9512b40e.jpg"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)

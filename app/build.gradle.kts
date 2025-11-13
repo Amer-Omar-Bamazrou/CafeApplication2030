@@ -60,4 +60,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.glide)
+    implementation("androidx.fragment:fragment-ktx:1.8.9")
 }
