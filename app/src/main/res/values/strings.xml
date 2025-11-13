@@ -16,6 +16,8 @@
     <string name="password_label">Password :</string>
     <string name="enter_password_hint">Enter password</string>
     <string name="register_button">Register</string>
+    <string name="content_description_logo">Dopamine Logo</string>
+
 
     <!-- Cafe Menu -->
     <string name="cafe_menu_title">Café Menu</string>

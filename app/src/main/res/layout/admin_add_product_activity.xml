@@ -1,68 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="#F5EFE6"
+    android:padding="20dp"
     tools:context=".ui.admin.AdminAddProductActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
+        <!-- Title -->
         <TextView
+            android:id="@+id/titleAddProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add New Product"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"/>
+            android:textColor="#291C0E"
+            android:fontFamily="serif"
+            android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/edit_text_product_name"
+        <!-- Card Container -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Product Name (e.g., Espresso)"
-            android:inputType="textCapWords"
-            android:layout_marginBottom="12dp"
-            android:minHeight="48dp" />
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#E1D4C2"
+            app:cardElevation="8dp"
+            android:padding="20dp">
 
-        <EditText
-            android:id="@+id/edit_text_product_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Price (e.g., 2.50)"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="12dp"
-            android:minHeight="48dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edit_text_product_image_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Image URL (Optional)"
-            android:inputType="textUri"
-            android:layout_marginBottom="12dp"
-            android:minHeight="48dp" />
+                <!-- Product Name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Name"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="#6E473B"
+                    android:layout_marginBottom="16dp">
 
-        <CheckBox
-            android:id="@+id/checkbox_is_available"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Is this product available?"
-            android:textSize="16sp"
-            android:checked="true"
-            android:layout_marginBottom="24dp"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_product_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#291C0E"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/button_save_product"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Product"
-            android:textSize="18sp"/>
+                <!-- Product Price -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Price (e.g., 2.50)"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="#6E473B"
+                    android:layout_marginBottom="16dp">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_product_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#291C0E"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Product Image URL -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Image URL (Optional)"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="#6E473B"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_product_image_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#291C0E"
+                        android:inputType="textUri" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Availability -->
+                <CheckBox
+                    android:id="@+id/checkbox_is_available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Available"
+                    android:textSize="18sp"
+                    android:textColor="#291C0E"
+                    android:checked="true"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Save Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_save_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save Product"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#6E473B"
+                    app:cornerRadius="16dp"
+                    android:padding="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </ScrollView>

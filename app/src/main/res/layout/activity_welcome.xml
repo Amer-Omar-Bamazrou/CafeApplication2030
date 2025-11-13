@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:src="@drawable/coffee_welcome"
         android:contentDescription="Full screen background" />
 
     <LinearLayout
@@ -21,23 +22,26 @@
         android:orientation="vertical"
         android:padding="24dp"
         android:gravity="bottom"
-        android:background="#77000000"> <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discover Your Coffee"
-        android:textSize="38sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"/>
+        android:background="#77000000">
 
         <TextView
+            android:id="@+id/textWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discover Your Coffee"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="The journey begins with a single perfect cup."
             android:textSize="18sp"
             android:textColor="#CFCFCF"
             android:layout_marginBottom="48dp"/>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +50,7 @@
             android:layout_marginBottom="24dp">
 
             <Button
-                android:id="@+id/button_welcome_sign_in"
+                android:id="@+id/buttonWelcomeSignIn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -54,18 +58,21 @@
                 android:textSize="18sp"
                 android:padding="12dp"
                 android:layout_marginEnd="8dp"
-                android:backgroundTint="#8D6E63"/> <Button
-            android:id="@+id/button_welcome_sign_up"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sign Up"
-            android:textSize="18sp"
-            android:padding="12dp"
-            android:layout_marginStart="8dp"
-            style="?attr/materialButtonOutlinedStyle"
-            android:textColor="@android:color/white"
-            app:strokeColor="@android:color/white"/>
+                android:backgroundTint="#8D6E63"/>
+
+            <Button
+                android:id="@+id/buttonWelcomeSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign Up"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                style="?attr/materialButtonOutlinedStyle"
+                android:textColor="@android:color/white"
+                app:strokeColor="@android:color/white"/>
         </LinearLayout>
     </LinearLayout>
+
 </FrameLayout>

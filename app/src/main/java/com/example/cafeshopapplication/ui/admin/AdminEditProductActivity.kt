@@ -29,9 +29,10 @@ class AdminEditProductActivity : AppCompatActivity() {
 
         loadProductData(currentProductId!!)
 
-        binding.buttonSaveProduct.setOnClickListener {
-            updateProduct()
+        binding.buttonUpdateProduct.setOnClickListener {
+            // update logic
         }
+
     }
 
     private fun loadProductData(productId: String) {

@@ -8,4 +8,8 @@
     <color name="color_tertiary">#6B9071</color>
     <color name="color_background_light">#AEC3B0</color>
     <color name="color_surface_cream">#E3EED4</color>
+    <color name="luxury_brown">#6E473B</color>
+    <color name="luxury_card_cream">#E1D4C2</color>
+    <color name="luxury_dark">#291C0E</color>
+
 </resources>
