@@ -5,37 +5,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_surface_cream"
+    android:background="@color/luxury_card_light"
     tools:context=".ui.order.OrderHistoryFragment">
 
+    <!-- Page Title -->
     <TextView
         android:id="@+id/text_view_history_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Your Order History"
-        android:textColor="@color/color_primary_dark"
-        android:textSize="24sp"
+        android:text="Order History"
+        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        android:textColor="@color/luxury_dark_brown"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Decorative line under title -->
+    <View
+        android:id="@+id/title_underline"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="@color/luxury_brown"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/text_view_history_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Orders List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_order_history"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:clipToPadding="false"
+        android:layout_marginTop="20dp"
         android:padding="16dp"
+        android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/title_underline"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_history_title"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_order_history" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

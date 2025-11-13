@@ -1,60 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    android:backgroundTint="@color/luxury_card_light"
+    app:strokeColor="@color/luxury_brown"
+    app:strokeWidth="1dp"
+    android:clickable="true"
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="18dp">
 
+        <!-- Order Date -->
         <TextView
             android:id="@+id/text_view_order_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            android:textColor="@color/luxury_brown"
+            tools:text="10 Nov 2025, 7:30 PM"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="10 Nov 2025, 7:30 PM" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_view_order_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_order_date"
-            tools:text="Total: $12.75" />
-
+        <!-- Order Status -->
         <TextView
             android:id="@+id/text_view_order_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/text_view_order_date"
+            android:textColor="@color/luxury_dark_brown"
+            tools:text="Completed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/text_view_order_date"
-            tools:text="Pending" />
+            app:layout_constraintBottom_toBottomOf="@id/text_view_order_date" />
 
-        <Button
-            android:id="@+id/button_leave_feedback"
-            android:layout_width="0dp"
+        <!-- Order Total -->
+        <TextView
+            android:id="@+id/text_view_order_total"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/luxury_dark_brown"
+            tools:text="Total: $12.75"
+            app:layout_constraintTop_toBottomOf="@id/text_view_order_date"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Rate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_leave_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
             android:text="Rate Order"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/luxury_brown"
+            app:cornerRadius="16dp"
             app:layout_constraintTop_toBottomOf="@id/text_view_order_total"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+</com.google.android.material.card.MaterialCardView>

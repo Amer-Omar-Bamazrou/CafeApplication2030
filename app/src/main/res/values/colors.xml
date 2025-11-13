@@ -11,5 +11,11 @@
     <color name="luxury_brown">#6E473B</color>
     <color name="luxury_card_cream">#E1D4C2</color>
     <color name="luxury_dark">#291C0E</color>
+    <color name="luxury_card_light">#E8DCC7</color>
+    <color name="luxury_background">#F8F3EC</color>
+    <color name="luxury_dark_brown">#291C0E</color>
+
+
+
 
 </resources>

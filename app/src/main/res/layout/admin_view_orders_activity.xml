@@ -1,28 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/luxury_background"
     tools:context=".ui.admin.AdminViewOrdersActivity">
 
+    <!-- Page Title -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/text_view_orders_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Customer Orders"
-        android:textSize="24sp"
+        android:text="Customer Orders"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:padding="16dp"
-        android:gravity="center" />
+        android:textColor="@color/luxury_brown"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Refresh Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_refresh_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="Refresh Orders"
+        android:src="@drawable/ic_refresh_luxury"
+        app:backgroundTint="@color/luxury_brown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <!-- RecyclerView for Orders -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_admin_orders"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_admin_order" />
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/text_view_orders_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_admin_order"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,19 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.menu.MenuFragment">
 
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/menu_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_background_menu"
+        android:alpha="0.35"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Title -->
     <TextView
         android:id="@+id/text_view_menu_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cafe_menu_title"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/color_primary_dark"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:elevation="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Categories -->
     <HorizontalScrollView
         android:id="@+id/category_scroll_view"
         android:layout_width="match_parent"
@@ -28,6 +42,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:layout_marginTop="16dp"
+        android:elevation="10dp"
         app:layout_constraintTop_toBottomOf="@id/text_view_menu_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -45,9 +60,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="All Coffee"
-                android:checked="true"
                 android:textColor="@color/white"
-                app:chipBackgroundColor="@color/color_secondary" />
+                android:checked="true"
+                app:chipBackgroundColor="@color/luxury_brown" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_latte"
@@ -55,15 +70,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Latte"
-                app:chipBackgroundColor="@color/color_surface_cream" />
+                app:chipBackgroundColor="@color/luxury_card_light" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_machiato"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Machiato"
-                app:chipBackgroundColor="@color/color_surface_cream" />
+                android:text="Macchiato"
+                app:chipBackgroundColor="@color/luxury_card_light" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_cake"
@@ -71,11 +86,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cake"
-                app:chipBackgroundColor="@color/color_surface_cream" />
+                app:chipBackgroundColor="@color/luxury_card_light" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
+    <!-- Products Grid -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_products"
         android:layout_width="0dp"
@@ -83,6 +99,7 @@
         android:layout_marginTop="12dp"
         android:padding="8dp"
         android:clipToPadding="false"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,21 +112,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Feedback FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_feedback_shortcut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_edit"
-        app:backgroundTint="@color/color_secondary"
+        app:backgroundTint="@color/luxury_brown"
         app:tint="@color/white"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Give Feedback"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

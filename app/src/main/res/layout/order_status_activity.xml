@@ -5,117 +5,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/color_surface_cream"
+    android:padding="20dp"
+    android:background="@color/luxury_card_light"
     tools:context=".ui.order.OrderStatusActivity">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/text_view_status_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Order Status"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/luxury_dark_brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
+    <!-- Current Status -->
     <TextView
         android:id="@+id/text_view_order_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/luxury_brown"
+        tools:text="Preparing"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Pending" />
+        app:layout_constraintTop_toTopOf="@id/text_view_status_title"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_status_title" />
 
+    <!-- Decorative Divider -->
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/color_secondary"
-        android:layout_marginTop="8dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/luxury_brown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_status_title" />
 
+    <!-- Items label -->
     <TextView
         android:id="@+id/text_view_items_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Items Ordered:"
-        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:text="Items Ordered"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/color_primary_dark"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        android:textColor="@color/luxury_dark_brown"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_order_items"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintBottom_toTopOf="@id/bottom_summary_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_items_label"
+        app:layout_constraintBottom_toTopOf="@id/bottom_summary_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_order_detail" />
 
+    <!-- Bottom Summary Section -->
     <LinearLayout
         android:id="@+id/bottom_summary_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="12dp"
-        android:background="@android:color/transparent"
+        android:padding="20dp"
+        android:background="@color/white"
+        android:elevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
 
+        <!-- Order Date -->
         <TextView
             android:id="@+id/text_view_order_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:textSize="14sp"
-            android:textColor="@color/color_secondary"
+            android:textColor="@color/luxury_brown"
             tools:text="Placed on: 10 Nov 2025" />
 
+        <!-- Total Price -->
         <TextView
             android:id="@+id/text_view_total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:gravity="end"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/color_primary_dark"
+            android:textColor="@color/luxury_dark_brown"
             tools:text="TOTAL: $12.75" />
 
-        <Button
+        <!-- Rate Order -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_rate_order"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
             android:text="Rate Order"
-            android:backgroundTint="#FFC107"
-            android:textColor="@android:color/black"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/luxury_brown"
+            app:cornerRadius="14dp"
             android:visibility="gone"
             tools:visibility="visible"/>
 
-        <Button
+        <!-- Back to Menu -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_back_to_menu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
             android:text="Back to Menu"
-            android:backgroundTint="@color/color_primary_dark"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:backgroundTint="@color/luxury_dark_brown"
+            app:cornerRadius="14dp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
