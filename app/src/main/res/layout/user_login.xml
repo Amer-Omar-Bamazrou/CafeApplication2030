@@ -91,19 +91,6 @@
             android:backgroundTint="#5D4037"
             app:cornerRadius="16dp" />
 
-        <!-- Register Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="New User"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            app:cornerRadius="16dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:textColor="#5D4037"
-            app:strokeColor="#5D4037"
-            app:strokeWidth="2dp" />
 
     </LinearLayout>
 

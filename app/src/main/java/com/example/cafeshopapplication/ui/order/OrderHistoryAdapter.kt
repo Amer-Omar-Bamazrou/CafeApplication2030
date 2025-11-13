@@ -40,7 +40,6 @@ class OrderHistoryAdapter(
         holder.binding.textViewOrderTotal.text = String.format("Total: $%.2f", order.totalPrice)
         holder.binding.textViewOrderStatus.text = order.orderStatus
 
-        // Format the Timestamp from Firebase into a readable date string
         holder.binding.textViewOrderDate.text = dateFormatter.format(order.orderDate.toDate())
 
 

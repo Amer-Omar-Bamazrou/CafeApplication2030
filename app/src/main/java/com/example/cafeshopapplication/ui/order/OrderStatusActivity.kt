@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cafeshopapplication.databinding.OrderStatusActivityBinding
-import com.example.cafeshopapplication.ui.menu.MenuPage
+import com.example.cafeshopapplication.MainActivity
 import com.example.cafeshopapplication.ui.feedback.FeedbackActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -38,14 +38,14 @@ class OrderStatusActivity : AppCompatActivity() {
         viewModel.listenToOrderStatus(orderId)
         observeViewModel()
 
-        // Listener for Back to Menu
         binding.buttonBackToMenu.setOnClickListener {
-            val intent = Intent(this, MenuPage::class.java)
+            val intent = Intent(this, MainActivity::class.java)
+            // Clear the back stack so the user can't press 'back' to return here
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
+        // ----------------------------
 
-        //  Listener for Rate Order
         binding.buttonRateOrder.setOnClickListener {
             val intent = Intent(this, FeedbackActivity::class.java)
             intent.putExtra("ORDER_ID", orderId)
@@ -68,10 +68,8 @@ class OrderStatusActivity : AppCompatActivity() {
                 binding.textViewTotalPrice.text = String.format(Locale.getDefault(), "TOTAL: $%.2f", order.totalPrice)
                 binding.textViewOrderDate.text = "Placed on: ${dateFormatter.format(order.orderDate.toDate())}"
 
-                // Update the list of items
                 detailAdapter.updateData(order.items)
 
-                // --- NEW LOGIC: Show/Hide Rate Button ---
                 if (order.orderStatus == "Completed") {
                     binding.buttonRateOrder.visibility = View.VISIBLE
                 } else {

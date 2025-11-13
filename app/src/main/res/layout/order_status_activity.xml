@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/color_surface_cream"
     tools:context=".ui.order.OrderStatusActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:text="Order Status"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/color_primary_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Pending" />
@@ -33,7 +35,7 @@
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/color_secondary"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +48,7 @@
         android:text="Items Ordered:"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/color_primary_dark"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider" />
@@ -69,7 +72,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingTop="12dp"
-        android:background="#FFFFFF"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:textSize="14sp"
+            android:textColor="@color/color_secondary"
             tools:text="Placed on: 10 Nov 2025" />
 
         <TextView
@@ -90,6 +94,7 @@
             android:gravity="end"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="@color/color_primary_dark"
             tools:text="TOTAL: $12.75" />
 
         <Button
@@ -108,7 +113,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Back to Menu" />
+            android:text="Back to Menu"
+            android:backgroundTint="@color/color_primary_dark"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
