@@ -120,7 +120,6 @@
             android:visibility="gone"
             tools:visibility="visible"/>
 
-        <!-- Back to Menu -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_back_to_menu"
             android:layout_width="match_parent"

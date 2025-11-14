@@ -25,7 +25,6 @@
             android:gravity="center"
             android:layout_marginBottom="24dp" />
 
-        <!-- Full Name -->
         <EditText
             android:id="@+id/editTextFullName"
             android:layout_width="match_parent"
@@ -37,7 +36,6 @@
             android:layout_marginBottom="12dp"
             android:inputType="textPersonName" />
 
-        <!-- Address -->
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
@@ -49,7 +47,6 @@
             android:layout_marginBottom="12dp"
             android:inputType="textPostalAddress" />
 
-        <!-- Phone -->
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
@@ -61,7 +58,6 @@
             android:layout_marginBottom="12dp"
             android:inputType="phone" />
 
-        <!-- Email -->
         <EditText
             android:id="@+id/editTextNewUserEmail"
             android:layout_width="match_parent"
@@ -73,7 +69,6 @@
             android:layout_marginBottom="12dp"
             android:inputType="textEmailAddress" />
 
-        <!-- Password -->
         <EditText
             android:id="@+id/editTextNewUserPassword"
             android:layout_width="match_parent"

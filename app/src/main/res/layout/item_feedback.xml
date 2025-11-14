@@ -12,7 +12,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- This TextView MUST have the id "text_view_feedback_order_id" -->
         <TextView
             android:id="@+id/text_view_feedback_order_id"
             android:layout_width="wrap_content"
@@ -21,7 +20,6 @@
             android:textStyle="bold"
             tools:text="Order ID: 12345ABC" />
 
-        <!-- This TextView MUST have the id "text_view_feedback_rating" -->
         <TextView
             android:id="@+id/text_view_feedback_rating"
             android:layout_width="wrap_content"
@@ -30,7 +28,6 @@
             android:textSize="16sp"
             tools:text="Rating: 5 / 5" />
 
-        <!-- This TextView MUST have the id "text_view_feedback_comment" -->
         <TextView
             android:id="@+id/text_view_feedback_comment"
             android:layout_width="wrap_content"

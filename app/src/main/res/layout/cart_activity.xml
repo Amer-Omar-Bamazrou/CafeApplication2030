@@ -8,7 +8,6 @@
     android:background="@color/luxury_card_cream"
     tools:context=".ui.cart.CartFragment">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/text_view_cart_title"
         android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="24dp" />
 
-    <!-- Cart Items List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_cart"
         android:layout_width="0dp"
@@ -37,7 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_cart" />
 
-    <!-- Summary Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_summary"
         android:layout_width="match_parent"
@@ -57,7 +54,7 @@
             android:padding="24dp"
             android:paddingBottom="36dp">
 
-            <!-- Payment Method -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +92,6 @@
                     android:buttonTint="@color/luxury_brown"/>
             </RadioGroup>
 
-            <!-- Total Price Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +116,6 @@
                     android:textColor="@color/luxury_dark_brown"/>
             </LinearLayout>
 
-            <!-- Place Order Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_place_order"
                 android:layout_width="match_parent"

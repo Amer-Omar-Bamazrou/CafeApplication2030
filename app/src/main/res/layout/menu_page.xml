@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.menu.MenuFragment">
 
-    <!-- Background Image -->
     <ImageView
         android:id="@+id/menu_background"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <!-- Title -->
     <TextView
         android:id="@+id/text_view_menu_title"
         android:layout_width="wrap_content"
@@ -33,7 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Categories -->
     <HorizontalScrollView
         android:id="@+id/category_scroll_view"
         android:layout_width="match_parent"
@@ -91,7 +88,6 @@
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
-    <!-- Products Grid -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_products"
         android:layout_width="0dp"
