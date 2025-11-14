@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Product Image -->
         <ImageView
             android:id="@+id/image_view_cart_item"
             android:layout_width="90dp"
@@ -29,7 +28,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
-        <!-- Product Name -->
+
         <TextView
             android:id="@+id/text_view_item_name"
             android:layout_width="0dp"
