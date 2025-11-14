@@ -8,7 +8,6 @@
     android:background="@color/luxury_background"
     tools:context=".ui.admin.AdminViewOrdersActivity">
 
-    <!-- Page Title -->
     <TextView
         android:id="@+id/text_view_orders_title"
         android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Refresh Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_refresh_orders"
         android:layout_width="wrap_content"
@@ -36,7 +34,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
-    <!-- RecyclerView for Orders -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_admin_orders"
         android:layout_width="0dp"

@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Product Image -->
         <ImageView
             android:id="@+id/imageViewProduct"
             android:layout_width="match_parent"
@@ -29,7 +28,6 @@
             android:background="@drawable/product_image_rounded"
             android:adjustViewBounds="true"/>
 
-        <!-- Product Name -->
         <TextView
             android:id="@+id/textViewProductName"
             android:layout_width="wrap_content"
@@ -40,7 +38,6 @@
             android:textColor="#291C0E"
             android:layout_marginTop="12dp"/>
 
-        <!-- Price -->
         <TextView
             android:id="@+id/textViewProductPrice"
             android:layout_width="wrap_content"
@@ -50,7 +47,6 @@
             android:textColor="#6E473B"
             android:layout_marginTop="4dp"/>
 
-        <!-- Add Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonAddToCart"
             android:layout_width="wrap_content"

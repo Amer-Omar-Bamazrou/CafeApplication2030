@@ -18,7 +18,6 @@
         android:layout_height="wrap_content"
         android:padding="14dp">
 
-        <!-- Quantity -->
         <TextView
             android:id="@+id/text_view_detail_quantity"
             android:layout_width="wrap_content"
@@ -31,7 +30,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Item Name -->
         <TextView
             android:id="@+id/text_view_detail_name"
             android:layout_width="0dp"
@@ -45,7 +43,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Subtotal -->
         <TextView
             android:id="@+id/text_view_detail_subtotal"
             android:layout_width="wrap_content"
