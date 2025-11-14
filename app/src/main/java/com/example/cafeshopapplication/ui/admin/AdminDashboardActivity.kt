@@ -27,10 +27,10 @@ class AdminDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // View Feedback
         binding.cardViewFeedback.setOnClickListener {
-            val intent = Intent(this, FeedbackActivity::class.java)
+            val intent = Intent(this, AdminViewFeedbackActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

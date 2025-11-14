@@ -73,7 +73,7 @@
                 app:chipBackgroundColor="@color/luxury_card_light" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_machiato"
+                android:id="@+id/chip_macchiato"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,7 +118,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Feedback FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_feedback_shortcut"
         android:layout_width="wrap_content"
@@ -128,7 +127,9 @@
         app:backgroundTint="@color/luxury_brown"
         app:tint="@color/white"
         android:elevation="10dp"
+        app:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Give Feedback" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

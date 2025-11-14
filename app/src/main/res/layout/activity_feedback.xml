@@ -149,7 +149,9 @@
             android:layout_height="wrap_content"
             android:text="Submit Feedback"
             android:textSize="18sp"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:backgroundTint="@color/button_primary_color" /> <!-- Use the color resource -->
+
 
     </LinearLayout>
 </ScrollView>

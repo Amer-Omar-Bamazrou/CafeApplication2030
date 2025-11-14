@@ -39,7 +39,7 @@ class MenuFragment : Fragment() {
         // 1. CATEGORY CHIP LISTENERS
         binding.chipAll.setOnClickListener { menuViewModel.filterByCategory("All") }
         binding.chipLatte.setOnClickListener { menuViewModel.filterByCategory("Latte") }
-        binding.chipMachiato.setOnClickListener { menuViewModel.filterByCategory("Macchiato") }
+        binding.chipMacchiato.setOnClickListener { menuViewModel.filterByCategory("Macchiato") }
         binding.chipCake.setOnClickListener { menuViewModel.filterByCategory("Cake") }
 
         binding.buttonFeedbackShortcut.setOnClickListener {
