@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Title -->
         <TextView
             android:id="@+id/titleAddProduct"
             android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
             android:fontFamily="serif"
             android:layout_marginBottom="24dp" />
 
-        <!-- Card Container -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +38,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Product Name -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -57,7 +54,6 @@
                         android:inputType="textCapWords" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Product Price -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,7 +70,6 @@
                         android:inputType="numberDecimal" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Product Image URL -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,7 +86,6 @@
                         android:inputType="textUri" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Availability -->
                 <CheckBox
                     android:id="@+id/checkbox_is_available"
                     android:layout_width="match_parent"
@@ -102,7 +96,6 @@
                     android:checked="true"
                     android:layout_marginBottom="24dp" />
 
-                <!-- Save Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_save_product"
                     android:layout_width="match_parent"

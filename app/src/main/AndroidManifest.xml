@@ -68,6 +68,8 @@
             android:name=".ui.feedback.FeedbackActivity"
             android:exported="false" />
 
+        <activity android:name=".ui.admin.AdminViewFeedbackActivity" android:exported="false" />
+
     </application>
 
 </manifest>
